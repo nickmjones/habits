@@ -1,0 +1,13 @@
+<nav class="navigation">
+  <h2 class="navigation__sitename">🅷🅰🅱🅸🆃🆂</h2>
+  <ul class="navigation__links">
+    <li>Habits</li>
+    <li>Points</li>
+    <li>
+      <% if user_signed_in? %>
+        Sign Out
+      <% else %>
+        Sign In
+      <% end %>
+    </li>
+</nav>

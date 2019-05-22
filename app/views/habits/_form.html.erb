@@ -1,0 +1,8 @@
+<%= simple_form_for :habit do |f| %>
+  <div class="form--core">
+    <%= f.input :title, label: false, placeholder: 'ex. Do 1 Pushup' %>
+    <p>What's the best time for a nudge?</p>
+    <%= f.input :frequency, as: :radio_buttons, label: false, collection: [['Morning'], ['Afternoon'], ['Evening']] %>
+  </div>
+  <%= f.button :submit  %>
+<% end %>

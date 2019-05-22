@@ -1,10 +1,17 @@
-<%= simple_form_for :habit do |f| %>
+
+<%= simple_form_for(@habit) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
   <div class="form--core">
     <%= f.input :title, label: false, placeholder: 'Drink a bottle of water' %>
     <p>What's the best time for a nudge?</p>
-    <%= f.input :frequency, as: :radio_buttons, label: false, collection: [['Morning'], ['Afternoon'], ['Evening']] %>
+    <%= f.input :frequency, as: :radio_buttons, label: false, collection: [['Morning', 'Morning'], ['Afternoon', 'Afternoon'], ['Evening', 'Evening']] %>
     <%= f.input :points, as: :hidden, input_html: { value: '2' } %>
     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
   </div>
-  <%= f.button :submit  %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 <% end %>

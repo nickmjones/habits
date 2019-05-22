@@ -1,0 +1,4 @@
+<% @habits.each do |h| %>
+  <h3><span class="points"> <%= h.points %>pts</span> <%= h.title %></h3>
+  <p>Reminding every <%= h.frequency.downcase %> | About <%= distance_of_time_in_words(Time.now, h.created_at) %> ago</p>
+<% end %>

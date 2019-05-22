@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+habits = Habit.create([
+  { title: 'Learn one Japanese word', points: 2, user_id: 1 },
+  { title: 'Drink one entire bottle of water', points: 2, user_id: 1 },
+  { title: 'Read one book chapter', points: 2, user_id: 1 }
+])
